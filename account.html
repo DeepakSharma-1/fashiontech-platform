@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Designer account — ALOKIT</title><link rel="stylesheet" href="assets/style.css">
+<style>
+.account-wrap{max-width:560px;margin:50px auto 100px;padding:0 22px}.account-card{border:1px solid #d7d8d0;background:#f8f8f4;padding:28px}
+.account-card h1{font-size:clamp(32px,5vw,52px);line-height:.98;margin:12px 0 16px}.account-card p{line-height:1.7;color:#64675f;font-size:13px}
+.mode-row{display:flex;gap:8px;margin:22px 0}.mode-btn{border:1px solid #c9cbc2;background:transparent;padding:10px 14px;cursor:pointer}.mode-btn.selected{background:#171916;color:#fff}
+.account-card label{display:block;font-size:11px;margin:14px 0 6px}.account-card input{width:100%;padding:12px;border:1px solid #c9cbc2;background:#fff;font:13px inherit}.account-card .btn{margin-top:20px;width:100%;cursor:pointer}
+.notice{padding:12px;background:#e6eee6;color:#315b43;font-size:12px;line-height:1.6;margin-top:16px}.notice.error{background:#f7e9e6;color:#963c32}
+</style></head><body>
+<div class="topbar">ALOKIT / Designer access</div>
+<header class="wrap nav"><a class="brand" href="index.html">ALOKIT<span>®</span></a><nav class="navlinks"><a href="about.html">About</a><a href="designs.html">Designs</a><a href="process.html">The process</a><a href="studio.html">Studio</a></nav><a class="nav-action" href="studio.html">Back to studio ↗</a></header>
+<main class="account-wrap"><section class="account-card">
+<div class="mono">ALOKIT / Designer account</div><h1>Make your<br>mark.</h1><p>Create a designer account to save your work and submit concepts for ALOKIT review. Your designs and contact details are not public by default.</p>
+<div id="signedInPanel" hidden><p>You are signed in as <strong id="signedInEmail"></strong>.</p><button class="btn" id="continueStudio">Continue to studio ↗</button> <button class="mode-btn" id="signOut">Sign out</button></div>
+<form id="accountForm">
+<div class="mode-row"><button type="button" class="mode-btn selected" id="modeSignup">Create account</button><button type="button" class="mode-btn" id="modeLogin">Log in</button></div>
+<input type="hidden" id="accountMode" value="signup">
+<div id="nameField"><label for="fullName">Full name *</label><input id="fullName" maxlength="100" autocomplete="name" required></div>
+<div><label for="designerName">Designer / brand name</label><input id="designerName" maxlength="80"></div>
+<div id="phoneField"><label for="phone">Phone / WhatsApp</label><input id="phone" type="tel" maxlength="25"></div>
+<div><label for="city">City</label><input id="city" maxlength="80"></div>
+<label for="accountEmail">Email address *</label><input id="accountEmail" type="email" autocomplete="email" required>
+<label for="accountPassword">Password * (at least 8 characters)</label><input id="accountPassword" type="password" minlength="8" autocomplete="new-password" required>
+<button class="btn" type="submit" id="accountSubmit">Create designer account</button>
+</form><div class="notice" id="accountStatus" role="status">Your account details are handled by Supabase Authentication.</div>
+</section></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="assets/supabase-config.js"></script><script src="assets/supabase-client.js"></script><script src="assets/auth.js"></script>
+</body></html>
